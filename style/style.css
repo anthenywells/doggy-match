@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF9FA;
+  }
+  
+
+
+/* header */
+  .topnav {
+    overflow: hidden;
+    background-color: #5D4A66;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #CEABB1;
+    color: #f2f2f2;
+  }
+  
+  .active {
+    background-color: #C18B43;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  .topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+  
+/* main */
+main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 80vh;
+}
+
+.location {
+    width:90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.map {
+    width: 70%;
+}
+
+.sorting {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* map */
+.options {
+    position: relative;
+}
+
+/* sorting */
+.custom-select {
+    position: relative;
+    margin: 15px 15px;    
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element:*/
+  }
+  
+  .select-selected {
+    background-color: #5D4A66;
+  }
+  
+  /*style the arrow inside the select element:*/
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /*point the arrow upwards when the select box is open (active):*/
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /*style the items (options), including the selected item:*/
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /*style items (options):*/
+  .select-items {
+    position: absolute;
+    background-color: #5D4A66;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /*hide the items when the select box is closed:*/
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color:#CEABB1;
+  }
+
+  .button {
+    background-color: #C18B43;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px 0;
+    cursor: pointer;
+  }
+
+  .button:hover {
+      background-color: #CEABB1;
+      
+  }
+
+
+
+
+
+  
+  /* mobile */
+
+  @media screen and (max-width: 800px) {
+    /* mobile nav effects*/
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+/*mobile nav layout*/
+    .search {
+        display: none;
+    }
+
+    main {
+        height: auto;
+    }
+
+    .sorting {
+        width: 90%;
+    }
+
+    .custom-select {
+        padding-right: 70px;
+        background-color: #5D4A66;
+    }
+
+    .select-selected {
+        padding-right: 50px;
+    } 
+
+    .location {
+        flex-direction: column;
+
+    }
+/* need to target iFrame if you want to alter map height and width */
+    iframe {
+        height: 300px;
+    }
+
+    .map {
+        margin: 20px 0px;
+    }
+
+  }
